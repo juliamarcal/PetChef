@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Poppins:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS Layout Mobile</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Registro</h1>
+        <img src="./img/animals.png">
+    </div>
+    <form id="registerForm">
+        <div class="form">
+            <label for="fname">Nome completo:</label>
+            <input type="text" id="fname" name="fname" placeholder="Nome" required>
+        </div>
+        <div class="form">
+            <label for="fname">Email:</label>
+            <input type="text" name="fname" placeholder="exemplo@email.com" required>
+        </div>
+        <div class="form">
+            <label for="lname">Senha:</label>
+            <input type="password" placeholder="Senha" id="password" required
+                placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+        </div>
+        <div class="form">
+            <label for="lname">Confirme sua senha:</label>
+            <input type="password" placeholder="Senha" id="confirm_password" required
+                placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+        </div>
+        <button type="submit">Registro</button>
+    </form>
+    <div class="register">
+        <p>Já é cadastrado? </p>
+        <p>Faça login <a href="/login.html">aqui</a></p>
+    </div>
+</body>
+
+</html>
