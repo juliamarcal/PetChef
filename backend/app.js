@@ -2,19 +2,19 @@
 function LoadAllDispensers() {
     var UserData = JSON.parse( localStorage.getItem("UserData") );
 
-    // fetch(/* endpoint -> fetchDispensers + UserData.id */)
-    // .then(response => response.json())
-    // .then(data => {
-    //     if(!isEmpty(data)) {
-    //         data.forEach(dispenser => {
-    //             gerarCard(dispenser.nome, dispenser.horarios);
-    //        }); 
+    fetch(/* endpoint -> fetchDispensers + UserData.id */)
+    .then(response => response.json())
+    .then(data => {
+        if(!isEmpty(data)) {
+            data.forEach(dispenser => {
+                gerarCard(dispenser.nome, dispenser.horarios);
+           }); 
             
-    //     }
-    // })
-    // .catch(error => {
-    //     console.error('Error:', error);
-    // });
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 /* add new dispenser */
@@ -22,7 +22,18 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
   .addEventListener('click', function() {
 
     var nomeEvento = document.getElementById('fname').value;
-    var horario = document.getElementById('appt').value;
+    var horarios = [document.getElementById('appt').value];
+    var aux;
+
+    // limita o numero de horarios para 10
+    for (var i=1; i<10; i++) {
+        try {
+            aux = document.getElementById('appt'+i).value ;
+        } catch (error) {
+            continue;
+        }
+        horarios.push(aux);
+    }
 
     fetch(/* endpoint -> PostDispenser + nome + horarios[] */)
     .then(response => response.json())

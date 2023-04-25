@@ -450,9 +450,14 @@
 
   <script>
     const btnAddInput = document.getElementById("btn-adicionar-paragrafo");
-    btnAddInput.addEventListener("click", addTimeInput);
+    btnAddInput.addEventListener("click", function(event) {
+      event.preventDefault(); // previne o comportamento padrão do formulário
+      addTimeInput();
+    });
+    var quantHorarios = 0;
 
     function addTimeInput() {
+      quantHorarios++;
       const inputContainer = document.createElement("div");
       inputContainer.className = "input-container";
       inputContainer.style.display = "flex";
@@ -461,6 +466,7 @@
       const input = document.createElement("input");
       input.type = "time";
       input.style.width = "100%";
+      input.id = "appt"+quantHorarios;
       inputContainer.appendChild(input);
 
       const deleteButton = document.createElement("button");
