@@ -16,7 +16,7 @@ p {
 
 a {
   text-decoration: none;
-  color: white;
+  color: white !important;
 }
 
 .pet-feeder h1 {
@@ -99,13 +99,24 @@ img {
   background: #DAEBFD;
   padding-top: 28px;
 }
-
+.dark-blue-2 {
+  background: #DAEBFD;
+  padding-top: 28px;
+}
 .about-the-project {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 0;
+  margin-right: 0 !important;
 }
-
+.about-the-project-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 0;
+  margin-right: 0 !important;
+}
 .paragraphs {
   display: flex;
   padding: 20px 40px 20px 20px;
@@ -223,7 +234,7 @@ img {
   color: #073161;
 }
 
-.vector {
+.vector-2 {
   display: flex;
   margin-left: auto;
 }
@@ -428,7 +439,7 @@ form {
   display: none;
 }
 
-.card-container {
+#card-container {
   padding-bottom: 50px;
 }
 
@@ -448,9 +459,64 @@ form {
   width: 50px;
 }
 
+.title {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(102.87deg, #A768E5 6.43%, #7FABDA 78.33%, #7FABDA 104.24%);
+}
+
+.background-desktop {
+  display: none;
+}
+
+.background-mobile {
+  display: flex;
+  justify-content: end;
+}
+
+#image-id {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.littleDogs {
+  display: none;
+}
+
+.vector,
+.vector2 {
+  display: none;
+}
+
+.row {
+  margin: 0px !important;
+}
+
+#image-id {
+  padding: 0px;
+}
+
+.text-footer {
+  color: #2475CC !important;
+}
+.services, .catDog{
+  display: none;
+}
+
 /* Menu Mobile */
 
 @media screen and (max-width: 768px) {
+  .title {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    background: E8F2FE;
+  }
 
   .header {
     position: fixed;
@@ -494,6 +560,7 @@ form {
     display: block;
     text-align: center;
     width: 100%;
+    color: white !important;
 
   }
 
@@ -534,10 +601,219 @@ form {
 
 }
 
-.title {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin: 0 auto;
-  background: linear-gradient(102.87deg, #A768E5 6.43%, #7FABDA 78.33%, #7FABDA 104.24%);
+@media screen and (min-width: 768px) {
+  a {
+    text-decoration: none;
+    color: #0D2944 !important;
+  }
+
+  .title {
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: 0 auto;
+    background: #E8F2FE;
+    max-width: none;
+  }
+
+  .header {
+    background: #E8F2FE !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    z-index: 100;
+  }
+
+  h1 {
+    background-image: linear-gradient(180deg, #7D584A 0%, rgba(127, 90, 76, 0) 100%),
+      linear-gradient(0deg, #CEA3FF, #CEA3FF);
+    background-clip: text !important;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    font-size: 80px !important;
+    font-weight: bold;
+    border: black 10px;
+    font-family: sans-serif;
+    margin: 0 !important;
+    line-height: 83px !important;
+  }
+
+  .row {
+    display: flex;
+    align-items: flex-end;
+
+  }
+
+  .background-desktop {
+    margin-top: 100px;
+    display: flex;
+    height: 28vw;
+  }
+
+  .pet-feeder {
+    align-items: flex-start;
+    padding-left: 10vw;
+  }
+
+  .background-mobile {
+    display: none;
+  }
+
+  #image-id {
+    display: flex;
+    justify-content: end;
+  }
+
+  #parag {
+    padding-left: 10vw;
+  }
+
+  .littleDogs {
+    display: flex;
+  }
+
+  #dogs {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .littleAnimals {
+    margin-left: 0px !important;
+  }
+
+  .vector {
+    display: flex;
+    margin-left: 0px !important;
+    margin-right: 0 !important;
+    width: 8vw;
+  }
+
+  .underline {
+    display: none;
+  }
+
+  .vector2 {
+    display: flex;
+  }
+
+  .dark-blue, .dark-blue-2 {
+    padding: 0px !important;
+  }
+
+  .carousel-desktop {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 20px;
+  }
+
+  .carousel-caption {
+    position: relative !important;
+    padding: 0px;
+  }
+
+  .fotos {
+    border-radius: 15px;
+    width: 50% !important;
+  }
+
+  .border {
+    display: none !important;
+  }
+
+  .carousel-text {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-left: 10vw;
+  }
+
+  .carousel-indicators {
+    margin-left: 0% !important;
+    left: 40% !important;
+    bottom: 20px !important;
+  }
+
+  .carousel-inner {
+    border-radius: 20px;
+  }
+
+  .carousel {
+    border: none !important;
+  }
+
+  .vector {
+    margin-left: auto;
+  }
+
+  .paragraphs-two {
+    max-width: 580px;
+  }
+
+
+  .text-dispenser {
+    font-weight: 300;
+    font-size: 1.3vw;
+    font-family: 'Poppins', sans-serif;
+    width: 16vw;
+    text-align: end;
+  }
+
+  .services-content {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .servc {
+    padding-left: 22vw;
+  }
+
+  .catDog {
+    display: flex;
+    margin-left: auto;
+    width: 20vw;
+  }
+  .dark-blue-2{
+    background-repeat: no-repeat;
+    background-image: url(img/Vector\ \(4\).png);
+    background-size: 27%;
+    background-position: left;
+  }
+  .all-cards{
+    display: none;
+  }
+  .services{
+    display: flex;
+  }
+  .footer{
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    width: 60%;
+    align-items: center;
+  }
+  .footer-image{
+    width: 40%;
+  }
+  .footer-section{
+    display: flex;
+    gap:70px;
+  }
+  .share{
+    gap:70px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .row {
+    display: flex;
+    align-items: flex-start !important;
+
+  }
 }

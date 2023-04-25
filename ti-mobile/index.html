@@ -34,162 +34,194 @@
       </ul>
     </nav>
   </header>
-  <section class="title">
-    <div class="pet-feeder">
-      <h1>Pet chef</h1>
-      <h2>Thousands more fun!!</h2>
-      <h3>O nosso site de alimentação automática para pets é uma solução fácil e conveniente para garantir que seu
-        animal de estimação esteja sempre bem alimentado. </h3>
-      <div class="buttons">
-        <button type="button" class="feed-button" data-toggle="modal" data-target="#ExemploModalCentralizado"
-          id="btn-gerar-card">
-          Cadastre <i class="fa-solid fa-paw"></i>
-        </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
-          aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Cadastre um horário</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form id="myForm">
-                  <div class="form">
-                    <label for="fname">Nome do evento:</label>
-                    <input id="fname" name="fname" placeholder="">
+  <section class="title">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+        <div class="pet-feeder">
+          <h1>Pet chef</h1>
+          <h2>Thousands more fun!!</h2>
+          <h3>O nosso site de alimentação automática para pets é uma solução fácil e conveniente para garantir que seu
+            animal de estimação esteja sempre bem alimentado. </h3>
+          <div class="buttons">
+            <button type="button" class="feed-button" data-toggle="modal" data-target="#ExemploModalCentralizado"
+              id="btn-gerar-card">
+              Cadastre <i class="fa-solid fa-paw"></i>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
+              aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Cadastre um horário</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
-                  <div class="form">
-                    <label for="appt">Cadastre um horário:</label>
-                    <div class="buttonForm">
-                      <input type="time" id="appt">
-                      <button id="btn-adicionar-paragrafo" class="clicable-button"><i
-                          class="fa-sharp fa-solid fa-plus"></i> </button>
-                    </div>
+                  <div class="modal-body">
+                    <form id="myForm">
+                      <div class="form">
+                        <label for="fname">Nome do evento:</label>
+                        <input id="fname" name="fname" placeholder="">
+                      </div>
+                      <div class="form">
+                        <label for="appt">Cadastre um horário:</label>
+                        <div class="buttonForm">
+                          <input type="time" id="appt">
+                          <button id="btn-adicionar-paragrafo" class="clicable-button"><i
+                              class="fa-sharp fa-solid fa-plus"></i> </button>
+                        </div>
+                      </div>
+                      <div id="inputsContainer"></div>
+                    </form>
                   </div>
-                  <div id="inputsContainer"></div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" href="#campos-container" class="btn btn-primary" data-dismiss="modal">Salvar
-                  mudanças</button>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" href="#campos-container" class="btn btn-primary" data-dismiss="modal">Salvar
+                      mudanças</button>
+                  </div>
+                </div>
               </div>
             </div>
+            <button type="button" class="share-button" onclick="scrollToShare()">Compartilhar</button>
           </div>
+          <script>
+            function scrollToShare() {
+              const shareDiv = document.querySelector(".share");
+              shareDiv.scrollIntoView({
+                behavior: "smooth"
+              });
+            }
+          </script>
         </div>
-        <button type="button" class="share-button" onclick="scrollToShare()">Compartilhar</button>
-        <script>
-          function scrollToShare() {
-            const shareDiv = document.querySelector(".share");
-            shareDiv.scrollIntoView({
-              behavior: "smooth"
-            });
-          }
-        </script>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6" id="image-id">
+        <img src="/ti-mobile/img/animalsBackground.png" alt="" class="background-mobile">
+        <img src="/ti-mobile/img/background-animals-desktop.png" alt="" class="background-desktop">
       </div>
     </div>
-    <img src="./img/animalsBackground.png" alt="">
   </section>
   <section class="dark-blue" id="about-the-project">
-    <div class="about-the-project">
-      <img src="./img/underline.png" alt="">
+
+    <div class="about-the-project-2">
+      <img src="/ti-mobile/img/underline.png" alt="" class="underline">
+      <img src="/ti-mobile/img/Vector (2).png" alt="" class="vector">
       <h2>Sobre nosso projeto</h2>
-      <img src="./img/underline.png" alt="">
+      <img src="/ti-mobile/img/underline.png" alt="" class="underline">
+      <img src="/ti-mobile/img/Vector (3).png" alt="" class="vector">
     </div>
-    <div class="paragraphs">
-      <img src="./img/patas.png" alt="">
-      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.</p>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-5 col-lg-5" id="parag">
+        <div class="paragraphs">
+          <img src="/ti-mobile/img/patas.png" alt="">
+          <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+            make
+            a type specimen book.</p>
+        </div>
+        <div class="paragraphs">
+          <img src="/ti-mobile/img/patas.png" alt="">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6" id="dogs">
+        <img src="/ti-mobile/img/little-dogs.png" alt="" class="littleDogs">
+      </div>
     </div>
-    <div class="paragraphs">
-      <img src="./img/patas.png" alt="">
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-    </div>
-    <img src="./img/littleAnimals.png" alt="" class="littleAnimals">
+    <img src="/ti-mobile/img/littleAnimals.png" alt="" class="littleAnimals">
   </section>
 
   <section class="light-blue" id="who">
     <div class="about-the-project">
-      <img src="/img/underline.png" alt="">
+      <img src="/ti-mobile/img/underline.png" alt="">
       <h2>Quem nós somos?</h2>
-      <img src="/img/underline.png" alt="">
+      <img src="/ti-mobile/img/underline.png" alt="">
     </div>
-    <div class="container1">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-          <li data-target="#myCarousel" data-slide-to="4"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="img/ju 1.png" alt="Ju Marcal" style="width:100%;">
-            <div class="carousel-caption">
-              <h3>Júlia Marçal</h3>
-              <p>Descrição da imagem 1.</p>
+    <div class="carousel-text">
+      <div class="container1">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+          </ol>
+          <ol class="carousel-indicators">
+
+          </ol>
+
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="carousel-desktop">
+                <img src="img/ju 1.png" alt="Ju Marcal" style="width:100%;" class="fotos">
+                <div class="carousel-caption">
+                  <h3>Júlia Marçal</h3>
+                  <p>Descrição da imagem 1.</p>
+                </div>
+              </div>
+              <div class="patas-carousel">
+                <img src="/ti-mobile/img/patas2.png" alt="">
+              </div>
+              <div class="border"></div>
             </div>
-            <div class="patas-carousel">
-              <img src="/img/patas2.png" alt="">
+            <div class="item">
+              <div class="carousel-desktop">
+                <img src="img/rossi 1.png" alt="Rossi" style="width:100%;" class="fotos">
+                <div class="carousel-caption">
+                  <h3>José Fernando</h3>
+                  <p>Descrição da imagem 2.</p>
+                </div>
+              </div>
+              <div class="patas-carousel">
+                <img src="/ti-mobile/img/patas2.png" alt="">
+              </div>
+              <div class="border"></div>
             </div>
-            <div class="border"></div>
+            <div class="item">
+              <div class="carousel-desktop">
+                <img src="img/milena 1.png" alt="Milena" style="width:100%;" class="fotos">
+                <div class="carousel-caption">
+                  <h3>Milena Soares</h3>
+                  <p>Descrição da imagem 3.</p>
+                </div>
+              </div>
+              <div class="patas-carousel">
+                <img src="/ti-mobile/img/patas2.png" alt="">
+              </div>
+              <div class="border"></div>
+            </div>
+            <div class="item">
+              <div class="carousel-desktop">
+                <img src="img/pedro 1.png" alt="Milena" style="width:100%;" class="fotos">
+                <div class="carousel-caption">
+                  <h3>Pedro Pereira</h3>
+                  <p>Descrição da imagem 3.</p>
+                </div>
+              </div>
+              <div class="patas-carousel">
+                <img src="/ti-mobile/img/patas2.png" alt="">
+              </div>
+              <div class="border"></div>
+            </div>
+            <div class="item">
+              <div class="carousel-desktop">
+                <img src="img/thay 1.png" alt="Milena" style="width:100%;" class="fotos">
+                <div class="carousel-caption">
+                  <h3>Thayris Gabriela</h3>
+                  <p>Descrição da imagem 3.</p>
+                </div>
+              </div>
+              <div class="patas-carousel">
+                <img src="/ti-mobile/img/patas2.png" alt="">
+              </div>
+              <div class="border"></div>
+            </div>
           </div>
-          <div class="item">
-            <img src="img/rossi 1.png" alt="Rossi" style="width:100%;">
-            <div class="carousel-caption">
-              <h3>José Fernando</h3>
-              <p>Descrição da imagem 2.</p>
-            </div>
-            <div class="patas-carousel">
-              <img src="/img/patas2.png" alt="">
-            </div>
-            <div class="border"></div>
-          </div>
-          <div class="item">
-            <img src="img/milena 1.png" alt="Milena" style="width:100%;">
-            <div class="carousel-caption">
-              <h3>Milena Soares</h3>
-              <p>Descrição da imagem 3.</p>
-            </div>
-            <div class="patas-carousel">
-              <img src="/img/patas2.png" alt="">
-            </div>
-            <div class="border"></div>
-          </div>
-          <div class="item">
-            <img src="img/pedro 1.png" alt="Milena" style="width:100%;">
-            <div class="carousel-caption">
-              <h3>Pedro Pereira</h3>
-              <p>Descrição da imagem 3.</p>
-            </div>
-            <div class="patas-carousel">
-              <img src="/img/patas2.png" alt="">
-            </div>
-            <div class="border"></div>
-          </div>
-          <div class="item">
-            <img src="img/thay 1.png" alt="Milena" style="width:100%;">
-            <div class="carousel-caption">
-              <h3>Thayris Gabriela</h3>
-              <p>Descrição da imagem 3.</p>
-            </div>
-            <div class="patas-carousel">
-              <img src="/img/patas2.png" alt="">
-            </div>
-            <div class="border"></div>
-          </div>
-        </div>
-        <!-- Left and right controls -->
-        <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <!-- Left and right controls -->
+          <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
           <span class="sr-only">Anterior</span>
         </a>
@@ -197,41 +229,45 @@
           <span class="glyphicon glyphicon-chevron-right"></span>
           <span class="sr-only">Próximo</span>
         </a> -->
+        </div>
+      </div>
+      <div>
+        <div class="head-paragraphs">
+          <img src="/ti-mobile/img/patas.png" alt="">
+          <p>Nos somos</p>
+        </div>
+        <div class="paragraphs-two">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
       </div>
     </div>
-    <div class="head-paragraphs">
-      <img src="/img/patas.png" alt="">
-      <p>Nos somos</p>
-    </div>
-    <div class="paragraphs-two">
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-    </div>
-    <img src="img/Vector (1).png" alt="" class=vector>
+    <img src="img/Vector (1).png" alt="" class=vector-2>
   </section>
-  <section class="dark-blue" id="servicos">
+  <section class="dark-blue-2" id="servicos">
     <div class="about-the-project">
-      <img src="/img/underline.png" alt="">
-      <h2>Serviços Disponíveis</h2>
-      <img src="/img/underline.png" alt="">
+      <img src="/ti-mobile/img/underline.png" alt="">
+      <h2>Serviços Disponíveis no site</h2>
+      <img src="/ti-mobile/img/underline.png" alt="">
     </div>
     <div class="all-cards">
       <div class="cards">
         <div class="card0">
-          <img src="/img/dispenser.png" alt="">
+          <img src="/ti-mobile/img/dispenser.png" alt="">
           <p>Dispenser Manual</p>
         </div>
         <div class="card2">
-          <img src="/img/intervalo.png" alt="">
+          <img src="/ti-mobile/img/intervalo.png" alt="">
           <p>Seleção de Horário de alimentação</p>
         </div>
       </div>
       <div class="cards">
         <div class="card3">
-          <img src="/img/racao.png" alt="">
+          <img src="/ti-mobile/img/racao.png" alt="">
           <p>Notificação de ração vazia</p>
         </div>
         <div class="card4">
-          <img src="/img/vazio.png" alt="">
+          <img src="/ti-mobile/img/vazio.png" alt="">
           <p>Notificação de dispenser vazio</p>
         </div>
       </div>
@@ -240,58 +276,89 @@
           industry's change weekly based on our local farm supply, so be sure to check back often for different
           arrangements! </p>
         <div class="cat-dog">
-          <img src="/img/cat.png" alt="">
-          <img src="/img/Rectangle 13.png" alt="">
-          <img src="/img/dog.png" alt="">
+          <img src="/ti-mobile/img/cat.png" alt="">
+          <img src="/ti-mobile/img/Rectangle 13.png" alt="">
+          <img src="/ti-mobile/img/dog.png" alt="">
         </div>
       </div>
     </div>
+    <div class="services">
+      <div class="services-content">
+        <!-- <img src="/ti-mobile/img/Vector (4).png" alt=""> -->
+        <p class="text-dispenser">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum
+          has been the industry's change weekly based on our local farm supply, so be sure to check back often for
+          different arrangements! </p>
+        <div class="servc">
+          <div class="head-paragraphs">
+            <img src="/ti-mobile/img/patas.png" alt="">
+            <p>Dispenser manual de comida</p>
+          </div>
+          <div class="head-paragraphs">
+            <img src="/ti-mobile/img/patas.png" alt="">
+            <p>Seleção de intervalo  </p>
+          </div>
+          <div class="head-paragraphs">
+            <img src="/ti-mobile/img/patas.png" alt="">
+            <p>Notificação de ração vazia</p>
+          </div>
+          <div class="head-paragraphs">
+            <img src="/ti-mobile/img/patas.png" alt="">
+            <p>Notificação de dispenser vazio</p>
+          </div>
+        
+        </div>
+
+
+      </div>
+
+    </div>
+    <img src="/ti-mobile/img/catDog.png" alt="" class="catDog">
   </section>
   <section class="light-blue" id="feed">
     <div class="about-the-project">
-      <img src="./img/underline.png" alt="">
+      <img src="/ti-mobile/img/underline.png" alt="">
       <h2>Alimentação</h2>
-      <img src="./img/underline.png" alt="">
+      <img src="/ti-mobile/img/underline.png" alt="">
     </div>
     <div class="head-paragraphs">
-      <img src="./img/pet-food 3.png" alt="">
+      <img src="/ti-mobile/img/pet-food 3.png" alt="">
       <p>Horário das refeições</p>
     </div>
     <div id="campos-container"></div>
     <div id="cards-container"></div>
     <div id="card-container"></div>
   </section>
-  <section>
+  <section class="footer-section">
     <div class="footer">
-      <img src="./img/logo.png" alt="">
+      <img src="/ti-mobile/img/logo.png" alt="" class="footer-image">
       <div class="img-text-footer">
-        <p class="footer-text"><a href="#about-the-project">Sobre</a></p>
+        <p class="footer-text"><a href="#about-the-project" class="text-footer">Sobre</a></p>
       </div>
       <div class="img-text-footer">
-        <p class="footer-text"><a href="#who">Quem Somos</a></p>
+        <p class="footer-text"><a href="#who" class="text-footer">Quem Somos</a></p>
       </div>
       <div class="img-text-footer">
-        <p class="footer-text"><a href="#servicos">Serviços</a></p>
+        <p class="footer-text"><a href="#servicos" class="text-footer">Serviços</a></p>
       </div>
       <div class="img-text-footer">
-        <p class="footer-text"><a href="#feed">Alimentação</a></p>
+        <p class="footer-text"><a href="#feed" class="text-footer">Alimentação</a></p>
       </div>
     </div>
     <div class="share">
       <div class="img-text" id="telegram-share-div">
-        <img src="./img/telegram.png" alt="">
+        <img src="/ti-mobile/img/telegram.png" alt="">
         <p>Telegram</p>
       </div>
       <div class="img-text" id="twitter-share-div">
-        <img src="./img/twitter.png" alt="">
+        <img src="/ti-mobile/img/twitter.png" alt="">
         <p>Twitter</p>
       </div>
       <div class="img-text" id="whatsapp-share-div">
-        <img src="./img/whatsapp.png" alt="">
+        <img src="/ti-mobile/img/whatsapp.png" alt="">
         <p>whatsapp</p>
       </div>
       <div class="img-text" id="share-div">
-        <img src="./img/email.png" alt="">
+        <img src="/ti-mobile/img/email.png" alt="">
         <p>Copiar link</p>
       </div>
     </div>
@@ -355,7 +422,7 @@
       div1.style.alignItems = "flex-end"
 
       const img = document.createElement('img');
-      img.src = './img/clock.png';
+      img.src = '/ti-mobile/img/clock.png';
       img.style.width = "21px"
       img.style.height = '21px'
       img.classList.add('card-image');
