@@ -17,7 +17,7 @@
   <title>CSS Layout Mobile</title>
 </head>
 
-<body>
+<body onload="LoadAllDispensers()">
   <header class="header">
     <nav>
       <input type="checkbox" id="menuToggle">
@@ -93,25 +93,25 @@
         </script>
       </div>
     </div>
-    <img src="/img/animalsBackground.png" alt="">
+    <img src="./img/animalsBackground.png" alt="">
   </section>
   <section class="dark-blue" id="about-the-project">
     <div class="about-the-project">
-      <img src="/img/underline.png" alt="">
+      <img src="./img/underline.png" alt="">
       <h2>Sobre nosso projeto</h2>
-      <img src="/img/underline.png" alt="">
+      <img src="./img/underline.png" alt="">
     </div>
     <div class="paragraphs">
-      <img src="/img/patas.png" alt="">
+      <img src="./img/patas.png" alt="">
       <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book.</p>
     </div>
     <div class="paragraphs">
-      <img src="/img/patas.png" alt="">
+      <img src="./img/patas.png" alt="">
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
     </div>
-    <img src="/img/littleAnimals.png" alt="" class="littleAnimals">
+    <img src="./img/littleAnimals.png" alt="" class="littleAnimals">
   </section>
 
   <section class="light-blue" id="who">
@@ -249,12 +249,12 @@
   </section>
   <section class="light-blue" id="feed">
     <div class="about-the-project">
-      <img src="/img/underline.png" alt="">
+      <img src="./img/underline.png" alt="">
       <h2>Alimentação</h2>
-      <img src="/img/underline.png" alt="">
+      <img src="./img/underline.png" alt="">
     </div>
     <div class="head-paragraphs">
-      <img src="/img/pet-food 3.png" alt="">
+      <img src="./img/pet-food 3.png" alt="">
       <p>Horário das refeições</p>
     </div>
     <div id="campos-container"></div>
@@ -263,7 +263,7 @@
   </section>
   <section>
     <div class="footer">
-      <img src="/img/logo.png" alt="">
+      <img src="./img/logo.png" alt="">
       <div class="img-text-footer">
         <p class="footer-text"><a href="#about-the-project">Sobre</a></p>
       </div>
@@ -279,19 +279,19 @@
     </div>
     <div class="share">
       <div class="img-text" id="telegram-share-div">
-        <img src="/img/telegram.png" alt="">
+        <img src="./img/telegram.png" alt="">
         <p>Telegram</p>
       </div>
       <div class="img-text" id="twitter-share-div">
-        <img src="/img/twitter.png" alt="">
+        <img src="./img/twitter.png" alt="">
         <p>Twitter</p>
       </div>
       <div class="img-text" id="whatsapp-share-div">
-        <img src="/img/whatsapp.png" alt="">
+        <img src="./img/whatsapp.png" alt="">
         <p>whatsapp</p>
       </div>
       <div class="img-text" id="share-div">
-        <img src="/img/email.png" alt="">
+        <img src="./img/email.png" alt="">
         <p>Copiar link</p>
       </div>
     </div>
@@ -330,10 +330,6 @@
           });
       });
     </script>
-
-
-
-    </div>
   </section>
 
   <script>
@@ -359,7 +355,7 @@
       div1.style.alignItems = "flex-end"
 
       const img = document.createElement('img');
-      img.src = '/img/clock.png';
+      img.src = './img/clock.png';
       img.style.width = "21px"
       img.style.height = '21px'
       img.classList.add('card-image');
@@ -438,6 +434,8 @@
       margin-top: 10px;
     }
   </style>
+
+  <script src="..\backend\app.js"></script>
 </body>
 
 </html>
