@@ -116,7 +116,7 @@ function gerarCard(nome, horarios) {
         div1.style.alignItems = "flex-end"
 
         const img = document.createElement('img');
-        img.src = './img/clock.png';
+        img.src = 'img/clock.png';
         img.style.width = "21px"
         img.style.height = '21px'
         img.classList.add('card-image');
