@@ -67,7 +67,7 @@ a {
   background-color: transparent;
   border: 2.5px solid #003459;
   border-radius: 57px;
-  padding: 14px 28px;
+  padding: 0.9vw;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -80,7 +80,7 @@ i {
 }
 
 .share-button {
-  padding: 14px 28px;
+  padding: 0.9vw;
   background: #003459;
   border-radius: 57px;
   border: 0px;
@@ -608,7 +608,6 @@ form {
   }
 
   .title {
-
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -644,7 +643,6 @@ form {
   .row {
     display: flex;
     align-items: flex-end;
-
   }
 
   .background-desktop {
@@ -702,11 +700,15 @@ form {
   .dark-blue, .dark-blue-2 {
     padding: 0px !important;
   }
-
+  .container1 {
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
+    padding-top: 32px;
+  }
   .carousel-desktop {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 3vw;
     padding: 20px;
   }
 
@@ -794,19 +796,20 @@ form {
   .footer{
     display: flex;
     flex-direction: row;
-    gap: 70px;
-    width: 60%;
+    width: 60vw;
     align-items: center;
+    gap:0px;
+    justify-content:space-between;
   }
   .footer-image{
     width: 40%;
   }
   .footer-section{
     display: flex;
-    gap:70px;
+    gap:4.8vw;
   }
   .share{
-    gap:70px;
+    width: 40vw;
   }
 }
 
