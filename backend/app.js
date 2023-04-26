@@ -1,13 +1,19 @@
 /* Loads all dispensers in user -> runs when the page reloads*/
-function LoadAllDispensers() {
-    var UserData = JSON.parse( localStorage.getItem("UserData") );
+class Schedule{
+    constructor(time){
+        this.time = time;
+    }
+}
 
-    fetch(/* endpoint -> fetchDispensers + UserData.id */)
+function LoadAllDispensers() {
+    var UserData = JSON.parse(localStorage.getItem("UserData") );
+
+    fetch(/* endpoint -> fetchDispensers + UserData.id */"http://localhost:8080/api/user/listDispensers/1")
     .then(response => response.json())
     .then(data => {
-        if(!isEmpty(data)) {
+        if(data.length > 0) {
             data.forEach(dispenser => {
-                gerarCard(dispenser.nome, dispenser.horarios);
+                gerarCard(dispenser.name, dispenser.schedules);
            }); 
             
         }
@@ -34,11 +40,22 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
         }
         horarios.push(aux);
     }
+    horarios = horarios.map((s) => new Schedule(s))
 
-    fetch(/* endpoint -> PostDispenser + nome + horarios[] */)
+    let data = {
+        name: document.getElementById('fname').value,
+        user: {id: 1},
+        schedules: horarios,
+    }
+
+    fetch(/* endpoint -> PostDispenser + nome + horarios[] */ "http://localhost:8080/api/dispenser/new", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
     .then(response => response.json())
     .then(data => {
-        if(!isEmpty(data)) {
+        if(data != null && data.id != null) {
             location.reload();
         } else {
             return /* mensagem de erro */
@@ -50,21 +67,21 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
 });
 
 
-/* Fatch Unique dispenser */
-// function SelectUniqueDispenser(dispenserID) {
-//     fetch(/* endpoint -> GetUniqueDispenser (dispenserID) */)
-//     .then(response => response.json())
-//     .then(data => {
-//         if(!isEmpty(data)) {
-//             /* open Dispenser PopUp updating with the data we got */
-//         } else {
-//             return /* mensagem de erro */
-//         }
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-// }
+/* Fetch Unique dispenser */
+function SelectUniqueDispenser(dispenserID) {
+    fetch(/* endpoint -> GetUniqueDispenser (dispenserID) */ "http://localhost:8080/api/dispenser/"+dispenserID)
+    .then(response => response.json())
+    .then(data => {
+        if(!isEmpty(data)) {
+            /* open Dispenser PopUp updating with the data we got */
+        } else {
+            return /* mensagem de erro */
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
 /* update dispenser */
 // function UpdateDispenser(dispenserID, data) {
@@ -123,7 +140,7 @@ function gerarCard(nome, horarios) {
         const p1 = document.createElement('p');
         p1.style.fontSize = "15px"
 
-        p1.textContent = 'Horário:' + horario; // horario
+        p1.textContent = 'Horário:' + horario.time; // horario
         p1.style.margin = '0px'
         p1.classList.add('card-text-1');
         div1.appendChild(img);
