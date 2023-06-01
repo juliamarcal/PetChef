@@ -7,8 +7,11 @@ class Schedule{
 
 function LoadAllDispensers() {
     var UserData = JSON.parse(localStorage.getItem("UserData") );
+    if(UserData == null) {
+        return;
+    }
 
-    fetch(/* endpoint -> fetchDispensers + UserData.id */"http://localhost:8080/api/user/listDispensers/1")
+    fetch(/* endpoint -> fetchDispensers + UserData.id */"http://localhost:8080/api/user/listDispensers/" + UserData.id+"?token="+UserData.token)
     .then(response => response.json())
     .then(data => {
         if(data.length > 0) {
@@ -42,10 +45,15 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
     }
     horarios = horarios.map((s) => new Schedule(s))
 
+    var UserData = JSON.parse(localStorage.getItem("UserData") );
+    if(UserData == null) {
+        return "Logue para cadastrar um dispenser";
+    }
+
     let data = {
         name: document.getElementById('fname').value,
-        user: {id: 1},
-        schedules: horarios,
+        user: {id: UserData.id, token: UserData.token},
+        schedules: horarios
     }
 
     fetch(/* endpoint -> PostDispenser + nome + horarios[] */ "http://localhost:8080/api/dispenser/new", {

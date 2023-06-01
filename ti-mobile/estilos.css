@@ -62,7 +62,11 @@ a {
   display: flex;
   gap: 24px;
 }
-
+#card-container{
+  display: flex;
+  flex-direction: column;
+  gap:20px
+}
 .feed-button {
   background-color: transparent;
   border: 2.5px solid #003459;

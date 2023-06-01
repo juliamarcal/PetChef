@@ -16,14 +16,19 @@ registerForm.addEventListener('submit', function(event) {
     }
 
     
-    fetch(/* endpoint -> cadastro */)
+    fetch("http://localhost:8080/api/user/new", {
+        method: "POST",
+        body: JSON.stringify({fullName: name, email: email, password: password}),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
     .then(response => response.json())
     .then(data => {
-        if(!isEmpty(data)) {
+        if(data.id != null) {
+            localStorage.clear();
             localStorage.setItem('UserData', JSON.stringify(data));
             window.location.href = "../ti-mobile/index.html";
         } else {
-            return /* mensagem de erro */
+            return "Erro ao cadastrar usuário"
         }
     })
     .catch(error => {
