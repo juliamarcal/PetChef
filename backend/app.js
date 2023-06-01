@@ -147,8 +147,10 @@ function gerarCard(nome, horarios) {
         img.classList.add('card-image');
         const p1 = document.createElement('p');
         p1.style.fontSize = "15px"
-
-        p1.textContent = 'Horário:' + horario.time; // horario
+        let oldTime = horario.time;
+        let newHour = (oldTime.split(':')[0] - 3) 
+        let final = newHour + ':' + oldTime.split(':')[1]
+        p1.textContent = 'Horário:' + final; // horario
         p1.style.margin = '0px'
         p1.classList.add('card-text-1');
         div1.appendChild(img);
