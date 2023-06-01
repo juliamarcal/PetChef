@@ -154,3 +154,18 @@ function gerarCard(nome, horarios) {
     cardContainer.appendChild(card);
 }
 
+function updateVazao(vazao) {
+    fetch(/* endpoint -> udpateVazão + vazao*/)
+    .then(response => response.json())
+    .then(data => {
+        if(!isEmpty(data)) {
+            location.reload();
+        } else {
+            alert("Erro: não foi possivel alterar a vazão nesse momento, tente novamente");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
