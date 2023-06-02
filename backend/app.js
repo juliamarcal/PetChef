@@ -63,8 +63,11 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
     let data = {
         name: document.getElementById('fname').value,
         user: {id: UserData.id, token: UserData.token},
-        schedules: horarios
+        schedules: horarios,
+        amountType: vazao.value
     }
+
+    vazao.isValid = false;
 
     fetch("http://localhost:8080/api/dispenser/new", {
         method: "POST",
