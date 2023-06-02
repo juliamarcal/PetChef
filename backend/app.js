@@ -134,7 +134,39 @@ function gerarCard(nome, horarios) {
     div2.appendChild(p2);
     p2.style.fontSize = "21px"
     card.appendChild(div2);
+    const div4 = document.createElement('div');
+    card.appendChild(div4);
 
+    const deleteButton = document.createElement("button");
+    deleteButton.style.backgroundColor = "red";
+    deleteButton.style.border = "0";
+    const deleteIcon = document.createElement("i");
+    deleteIcon.style.padding = 0;
+    deleteIcon.className = "fas fa-trash-alt";
+    deleteIcon.style.color = "white";
+    deleteButton.appendChild(deleteIcon);
+    deleteButton.onclick = function () {
+      card.remove();
+    }
+    card.appendChild(deleteButton);
+    div2.style.display = "flex"
+    div2.style.alignItems = "center"
+    div2.style.justifyContent = "space-between"
+    const editButton = document.createElement("button");
+    editButton.style.backgroundColor = "blue";
+    editButton.style.border = "0";
+    const editIcon = document.createElement("i");
+    editIcon.style.padding = 0;
+    editIcon.className = "fas fa-edit";
+    editIcon.style.color = "white";
+    editButton.appendChild(editIcon);
+    card.appendChild(editButton);
+    div4.appendChild(deleteButton);
+    div4.appendChild(editButton);
+    div4.style.display = "flex"
+    div4.style.gap = "5px"
+    div2.appendChild(div4);
+    
     horarios.forEach ( horario => {
         const div1 = document.createElement('div');
         div1.style.display = "flex"

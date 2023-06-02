@@ -109,7 +109,7 @@ p {
 
 .dropdown-content {
   display: none;
-  position: absolute;
+  position: absolute ;
   min-width: 160px;
   z-index: 1;
   background-color: #fff;
@@ -117,7 +117,9 @@ p {
 }
 
 .dropdown-content a {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 8px 12px;
   text-decoration: none;
   color: #333 !important;
@@ -133,6 +135,15 @@ p {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.closed{
+  background-color: #D3B0E0 !important;
+  border-radius: 4px;
+}
+.teste123 {
+  display: flex;
+  justify-content: space-between;
 }
 
 a {

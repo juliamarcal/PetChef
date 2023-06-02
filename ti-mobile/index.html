@@ -70,6 +70,8 @@
               id="btn-gerar-card">
               Cadastre <i class="fa-solid fa-paw"></i>
             </button>
+
+
             <!-- Modal -->
             <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
               aria-labelledby="TituloModalCentralizado" aria-hidden="true">
@@ -99,8 +101,21 @@
                     </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" href="#campos-container" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+                    <div class="teste123">
+                      <div class="dropdown">
+                        <button type="button" class="closed" data-dismiss="modal">Vazão</button>
+                        <div class="dropdown-content dropdown-content-up">
+                          <a onclick="updateVazao(2)">Muito</a>
+                          <a onclick="updateVazao(1)">Medio</a>
+                          <a onclick="updateVazao(0)">Pouco</a>
+                        </div>
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" href="#campos-container" class="btn btn-primary"
+                          data-dismiss="modal">Salvar</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -136,11 +151,15 @@
       <div class="col-12 col-sm-12 col-md-5 col-lg-5" id="parag">
         <div class="paragraphs">
           <img src="img/patas.png" alt="">
-          <p> Os veterinários recomendam que os pets tenham uma rotina de alimentação consistente para manter sua saúde e bem-estar. Ter uma rotina de alimentação saudável e consistente pode ajudar a prevenir problemas de saúde relacionados à alimentação, além de manter o peso ideal e fornecer os nutrientes necessários para uma vida feliz e saudável</p>
+          <p> Os veterinários recomendam que os pets tenham uma rotina de alimentação consistente para manter sua saúde
+            e bem-estar. Ter uma rotina de alimentação saudável e consistente pode ajudar a prevenir problemas de saúde
+            relacionados à alimentação, além de manter o peso ideal e fornecer os nutrientes necessários para uma vida
+            feliz e saudável</p>
         </div>
         <div class="paragraphs">
           <img src="img/patas.png" alt="">
-          <p>Esqueça essa preocupação com a ausência prologanda, use o peet chef para garantir uma rotina saudável de alimentação</p>
+          <p>Esqueça essa preocupação com a ausência prologanda, use o peet chef para garantir uma rotina saudável de
+            alimentação</p>
         </div>
       </div>
       <div class="col-12 col-sm-12 col-md-6 col-lg-6" id="dogs">
@@ -254,7 +273,11 @@
           <p>Nos somos</p>
         </div>
         <div class="paragraphs-two">
-          <p>O Pet Chef foi desenvolvido por alunos do curso de Ciência da Computação da PUC Minas com o objetivo de fornecer uma solução inovadora para garantir a alimentação regular de animais de estimação. Com o conhecimento e habilidades adquiridos em programação e tecnologia, os alunos criaram um produto que ajuda a manter a rotina de alimentação dos pets, mesmo em momentos de ausência prolongada ou rotinas agitadas. O Pet Chef é um exemplo do uso da tecnologia para melhorar a vida dos nossos companheiros de quatro patas.</p>
+          <p>O Pet Chef foi desenvolvido por alunos do curso de Ciência da Computação da PUC Minas com o objetivo de
+            fornecer uma solução inovadora para garantir a alimentação regular de animais de estimação. Com o
+            conhecimento e habilidades adquiridos em programação e tecnologia, os alunos criaram um produto que ajuda a
+            manter a rotina de alimentação dos pets, mesmo em momentos de ausência prolongada ou rotinas agitadas. O Pet
+            Chef é um exemplo do uso da tecnologia para melhorar a vida dos nossos companheiros de quatro patas.</p>
         </div>
       </div>
     </div>
@@ -301,7 +324,9 @@
     <div class="services">
       <div class="services-content">
         <!-- <img src="img/Vector (4).png" alt=""> -->
-        <p class="text-dispenser">Com nossos serviços é possível escolher horários para alimentar seu animal de estimação, garantindo uma rotina de alimentação saudável e consistente.Tenha a tranquilidade de saber que seu pet está sendo alimentado adequadamente  </p>
+        <p class="text-dispenser">Com nossos serviços é possível escolher horários para alimentar seu animal de
+          estimação, garantindo uma rotina de alimentação saudável e consistente.Tenha a tranquilidade de saber que seu
+          pet está sendo alimentado adequadamente </p>
         <div class="servc">
           <div class="head-paragraphs">
             <img src="img/patas.png" alt="">
@@ -309,7 +334,7 @@
           </div>
           <div class="head-paragraphs">
             <img src="img/patas.png" alt="">
-            <p>Seleção de intervalo  </p>
+            <p>Seleção de intervalo </p>
           </div>
           <div class="head-paragraphs">
             <img src="img/patas.png" alt="">
@@ -319,7 +344,7 @@
             <img src="img/patas.png" alt="">
             <p>Notificação de dispenser vazio</p>
           </div>
-        
+
         </div>
 
 
@@ -358,15 +383,6 @@
       </div>
       <div class="img-text-footer">
         <p class="footer-text"><a href="#feed" class="text-footer">Alimentação</a></p>
-      </div>
-      <div class="dropdown">
-        <p class="footer-text"><a href="#dropdrown" class="text-footer">Vazão</a>
-          <div class="dropdown-content dropdown-content-up">
-            <a onclick="updateVazao(2)" >Muito</a>
-            <a onclick="updateVazao(1)" >Medio</a>
-            <a onclick="updateVazao(0)" >Pouco</a>
-          </div>
-        </p>
       </div>
 
     </div>
@@ -442,10 +458,10 @@
       div2.appendChild(p2);
       p2.style.fontSize = "21px"
       card.appendChild(div2);
-      
+
       const div4 = document.createElement('div');
       card.appendChild(div4);
-      
+
       const deleteButton = document.createElement("button");
       deleteButton.style.backgroundColor = "red";
       deleteButton.style.border = "0";
@@ -455,7 +471,7 @@
       deleteIcon.style.color = "white";
       deleteButton.appendChild(deleteIcon);
       deleteButton.onclick = function () {
-      card.remove();
+        card.remove();
       }
       card.appendChild(deleteButton);
       div2.style.display = "flex"
@@ -510,7 +526,7 @@
 
   <script>
     const btnAddInput = document.getElementById("btn-adicionar-paragrafo");
-    btnAddInput.addEventListener("click", function(event) {
+    btnAddInput.addEventListener("click", function (event) {
       event.preventDefault(); // previne o comportamento padrão do formulário
       addTimeInput();
     });
@@ -526,7 +542,7 @@
       const input = document.createElement("input");
       input.type = "time";
       input.style.width = "100%";
-      input.id = "appt"+quantHorarios;
+      input.id = "appt" + quantHorarios;
       inputContainer.appendChild(input);
 
       const deleteButton = document.createElement("button");
