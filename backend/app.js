@@ -11,12 +11,12 @@ function LoadAllDispensers() {
         return;
     }
 
-    fetch(/* endpoint -> fetchDispensers + UserData.id */"http://localhost:8080/api/user/listDispensers/" + UserData.id+"?token="+UserData.token)
+    fetch("http://localhost:8080/api/user/listDispensers/" + UserData.id+"?token="+UserData.token)
     .then(response => response.json())
     .then(data => {
         if(data.length > 0) {
             data.forEach(dispenser => {
-                gerarCard(dispenser.name, dispenser.schedules);
+                gerarCard(dispenser.id, dispenser.name, dispenser.schedules);
            }); 
             
         }
@@ -56,7 +56,7 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
         schedules: horarios
     }
 
-    fetch(/* endpoint -> PostDispenser + nome + horarios[] */ "http://localhost:8080/api/dispenser/new", {
+    fetch("http://localhost:8080/api/dispenser/new", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -77,7 +77,7 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
 
 /* Fetch Unique dispenser */
 function SelectUniqueDispenser(dispenserID) {
-    fetch(/* endpoint -> GetUniqueDispenser (dispenserID) */ "http://localhost:8080/api/dispenser/"+dispenserID)
+    fetch("http://localhost:8080/api/dispenser/"+dispenserID)
     .then(response => response.json())
     .then(data => {
         if(!isEmpty(data)) {
@@ -92,7 +92,7 @@ function SelectUniqueDispenser(dispenserID) {
 }
 
 /* update dispenser */
-// function UpdateDispenser(dispenserID, data) {
+function UpdateDispenser(dispenserID, data) {
 //     fetch(/* endpoint -> UpdateDispenser (dispenserID, name, horarios) */)
 //     .then(response => response.json())
 //     .then(data => {
@@ -105,11 +105,11 @@ function SelectUniqueDispenser(dispenserID) {
 //     .catch(error => {
 //         console.error('Error:', error);
 //     });
-// }
+}
 
 
 /* remove Dispenser */
-// function RemoveDispenser(dispenserID) {
+function RemoveDispenser(dispenserID) {
 //     fetch(/* endpoint -> RemoveDispenser (dispenserID) */)
 //     .then(response => {
 //         if (response.ok) {
@@ -121,12 +121,13 @@ function SelectUniqueDispenser(dispenserID) {
 //     .catch(error => {
 //         console.error('Error:', error);
 //     });
-// }
+}
 
 
-function gerarCard(nome, horarios) {
+function gerarCard(nome, horarios, id) {
     const card = document.createElement('div');
     card.classList.add('card');
+    card.id = id;
 
     const div2 = document.createElement('div');
     const p2 = document.createElement('p');
@@ -147,6 +148,7 @@ function gerarCard(nome, horarios) {
     deleteButton.appendChild(deleteIcon);
     deleteButton.onclick = function () {
       card.remove();
+      RemoveDispenser(id);
     }
     card.appendChild(deleteButton);
     div2.style.display = "flex"
@@ -155,6 +157,9 @@ function gerarCard(nome, horarios) {
     const editButton = document.createElement("button");
     editButton.style.backgroundColor = "blue";
     editButton.style.border = "0";
+    editButton.onclick = function () {
+        UpdateDispenser(id);
+    }
     const editIcon = document.createElement("i");
     editIcon.style.padding = 0;
     editIcon.className = "fas fa-edit";
