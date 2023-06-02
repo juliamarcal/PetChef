@@ -35,13 +35,8 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
     var horarios = [document.getElementById('appt').value];
     var aux;
 
-    /* 
-    colocar vazao no banco 
-    depois colocar vazao.isValid = false
-    */
-
     if (!vazao.isValid) {
-        vazao = 1;
+        vazao.value = 1;
     }
 
     // limita o numero de horarios para 10
