@@ -1,3 +1,4 @@
+var vazao = {"value":1 , "isValid": false}
 /* Loads all dispensers in user -> runs when the page reloads*/
 class Schedule{
     constructor(time){
@@ -16,7 +17,7 @@ function LoadAllDispensers() {
     .then(data => {
         if(data.length > 0) {
             data.forEach(dispenser => {
-                gerarCard(dispenser.id, dispenser.name, dispenser.schedules);
+                gerarCard(dispenser.name, dispenser.schedules, dispenser.id);
            }); 
             
         }
@@ -33,6 +34,15 @@ document.querySelector('#ExemploModalCentralizado .modal-footer button.btn-prima
     var nomeEvento = document.getElementById('fname').value;
     var horarios = [document.getElementById('appt').value];
     var aux;
+
+    /* 
+    colocar vazao no banco 
+    depois colocar vazao.isValid = false
+    */
+
+    if (!vazao.isValid) {
+        vazao = 1;
+    }
 
     // limita o numero de horarios para 10
     for (var i=1; i<10; i++) {
@@ -93,34 +103,34 @@ function SelectUniqueDispenser(dispenserID) {
 
 /* update dispenser */
 function UpdateDispenser(dispenserID, data) {
-//     fetch(/* endpoint -> UpdateDispenser (dispenserID, name, horarios) */)
-//     .then(response => response.json())
-//     .then(data => {
-//         if(!isEmpty(data)) {
-//             location.reload();
-//         } else {
-//             return /* mensagem de erro */
-//         }
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
+    fetch(/* endpoint -> UpdateDispenser (dispenserID, name, horarios) */)
+    .then(response => response.json())
+    .then(data => {
+        if(!isEmpty(data)) {
+            location.reload();
+        } else {
+            return /* mensagem de erro */
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 
 /* remove Dispenser */
 function RemoveDispenser(dispenserID) {
-//     fetch(/* endpoint -> RemoveDispenser (dispenserID) */)
-//     .then(response => {
-//         if (response.ok) {
-//             return /* confirm delete message */
-//         } else {
-//           return /* error message */
-//         }
-//       })      
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
+    fetch(/* endpoint -> RemoveDispenser (dispenserID) */)
+    .then(response => {
+        if (response.ok) {
+            return /* confirm delete message */
+        } else {
+          return /* error message */
+        }
+      })      
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 
@@ -201,18 +211,8 @@ function gerarCard(nome, horarios, id) {
     cardContainer.appendChild(card);
 }
 
-function updateVazao(vazao) {
-    fetch(/* endpoint -> udpateVazão + vazao*/)
-    .then(response => response.json())
-    .then(data => {
-        if(!isEmpty(data)) {
-            location.reload();
-        } else {
-            alert("Erro: não foi possivel alterar a vazão nesse momento, tente novamente");
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+function updateVazao(v) {
+    vazao.value = v;
+    vazao.isValid = true;
 }
 
