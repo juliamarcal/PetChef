@@ -100,25 +100,29 @@ function SelectUniqueDispenser(dispenserID) {
 }
 
 /* update dispenser */
-// function UpdateDispenser(dispenserID, data) {
-//     fetch(/* endpoint -> UpdateDispenser (dispenserID, name, horarios) */)
-//     .then(response => response.json())
-//     .then(data => {
-//         if(!isEmpty(data)) {
-//             location.reload();
-//         } else {
-//             return /* mensagem de erro */
-//         }
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-// }
+function UpdateDispenser(dispenserID, data) {
+    fetch()
+    .then(response => response.json())
+    .then(data => {
+        if(!isEmpty(data)) {
+            location.reload();
+        } else {
+            return /* mensagem de erro */
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
 
 /* remove Dispenser */
 function RemoveDispenser(dispenserID) {
-    fetch(/* endpoint -> RemoveDispenser (dispenserID) */)
+    var UserData = JSON.parse(localStorage.getItem("UserData") );
+    if(UserData == null) {
+        return "Logue para deletar um dispenser";
+    }
+    fetch("http://localhost:8080/api/dispenser/"+dispenserID+"?token=" + UserData.token, {method: "DELETE"})
     .then(response => {
         if (response.ok) {
             return /* confirm delete message */
