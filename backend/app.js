@@ -100,20 +100,20 @@ function SelectUniqueDispenser(dispenserID) {
 }
 
 /* update dispenser */
-function UpdateDispenser(dispenserID, data) {
-    fetch(/* endpoint -> UpdateDispenser (dispenserID, name, horarios) */)
-    .then(response => response.json())
-    .then(data => {
-        if(!isEmpty(data)) {
-            location.reload();
-        } else {
-            return /* mensagem de erro */
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
+// function UpdateDispenser(dispenserID, data) {
+//     fetch(/* endpoint -> UpdateDispenser (dispenserID, name, horarios) */)
+//     .then(response => response.json())
+//     .then(data => {
+//         if(!isEmpty(data)) {
+//             location.reload();
+//         } else {
+//             return /* mensagem de erro */
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// }
 
 
 /* remove Dispenser */
@@ -162,20 +162,11 @@ function gerarCard(nome, horarios, id) {
     div2.style.display = "flex"
     div2.style.alignItems = "center"
     div2.style.justifyContent = "space-between"
-    const editButton = document.createElement("button");
-    editButton.style.backgroundColor = "blue";
-    editButton.style.border = "0";
-    editButton.onclick = function () {
-        UpdateDispenser(id);
-    }
     const editIcon = document.createElement("i");
     editIcon.style.padding = 0;
     editIcon.className = "fas fa-edit";
     editIcon.style.color = "white";
-    editButton.appendChild(editIcon);
-    card.appendChild(editButton);
     div4.appendChild(deleteButton);
-    div4.appendChild(editButton);
     div4.style.display = "flex"
     div4.style.gap = "5px"
     div2.appendChild(div4);
